@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏡 IoT-Based Smart Home Automation System
 
 A modern, responsive, full-stack IoT dashboard and hardware gateway designed for an engineering project titled **“IoT-Based Smart Home Automation System”**.
@@ -157,3 +158,6 @@ If asked during your project defense:
 
 ## 📄 License
 MIT License. Developed for academic engineering project demonstration.
+=======
+# iot
+>>>>>>> c61dc87af9752842cc3379d3aaba11ffe797487d
