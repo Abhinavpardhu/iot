@@ -1,0 +1,1192 @@
+{
+  "settings": {
+    "systemMode": "demo",
+    "tempUnit": "C",
+    "theme": "dark",
+    "notificationsEnabled": true,
+    "mqtt": {
+      "brokerUrl": "mqtt://broker.hivemq.com:1883",
+      "clientId": "esp32_gateway_station_1",
+      "username": "",
+      "password": "",
+      "topicPrefix": "home",
+      "connected": false,
+      "lastPing": null,
+      "messagesReceived": 0,
+      "messagesSent": 0
+    },
+    "demoSettings": {
+      "fluctuateSensors": true,
+      "randomMotion": true,
+      "simulationSpeed": "normal"
+    }
+  },
+  "rooms": [
+    {
+      "id": "living-room",
+      "name": "Living Room",
+      "icon": "Sofa",
+      "floor": "Ground Floor",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "bedroom",
+      "name": "Master Bedroom",
+      "icon": "Bed",
+      "floor": "1st Floor",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "icon": "Utensils",
+      "floor": "Ground Floor",
+      "color": "#10b981"
+    },
+    {
+      "id": "study",
+      "name": "Study & Office",
+      "icon": "BookOpen",
+      "floor": "1st Floor",
+      "color": "#8b5cf6"
+    }
+  ],
+  "devices": [
+    {
+      "id": "light_lr_main",
+      "name": "Main Ceiling Chandelier",
+      "room": "living-room",
+      "type": "light",
+      "state": "OFF",
+      "isOnline": true,
+      "powerWatts": 24,
+      "lastUpdated": "2026-10-09T07:23:53.648Z",
+      "pin": "D23",
+      "mqttTopic": "home/living-room/light1",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "light_lr_ambient",
+      "name": "Cove Accent Lighting",
+      "room": "living-room",
+      "type": "light",
+      "state": "OFF",
+      "isOnline": true,
+      "powerWatts": 14,
+      "lastUpdated": "2026-10-09T07:23:53.822Z",
+      "pin": "D22",
+      "mqttTopic": "home/living-room/light2",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "fan_lr_ceiling",
+      "name": "Smart Ceiling Fan",
+      "room": "living-room",
+      "type": "fan",
+      "state": "OFF",
+      "isOnline": true,
+      "powerWatts": 65,
+      "lastUpdated": "2026-10-09T07:23:53.996Z",
+      "pin": "D19",
+      "mqttTopic": "home/living-room/fan",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "light_br_main",
+      "name": "Bedside Nightstand Lamp",
+      "room": "bedroom",
+      "type": "light",
+      "state": "OFF",
+      "isOnline": true,
+      "powerWatts": 8,
+      "lastUpdated": "2026-10-09T07:09:49.207Z",
+      "pin": "D18",
+      "mqttTopic": "home/bedroom/light1",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "ac_br_cooling",
+      "name": "Inverter Air Conditioner",
+      "room": "bedroom",
+      "type": "climate",
+      "state": "OFF",
+      "isOnline": true,
+      "powerWatts": 950,
+      "lastUpdated": "2026-10-09T07:09:49.207Z",
+      "pin": "D5",
+      "mqttTopic": "home/bedroom/ac",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "plug_kt_kettle",
+      "name": "Coffee Maker / Smart Plug",
+      "room": "kitchen",
+      "type": "plug",
+      "state": "OFF",
+      "isOnline": true,
+      "powerWatts": 1200,
+      "lastUpdated": "2026-10-09T07:09:49.207Z",
+      "pin": "D4",
+      "mqttTopic": "home/kitchen/plug1",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "light_kt_under",
+      "name": "Kitchen Counter Lights",
+      "room": "kitchen",
+      "type": "light",
+      "state": "ON",
+      "isOnline": true,
+      "powerWatts": 18,
+      "lastUpdated": "2026-10-09T07:09:49.207Z",
+      "pin": "D15",
+      "mqttTopic": "home/kitchen/light1",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "light_st_desk",
+      "name": "Study Task Desk Lamp",
+      "room": "study",
+      "type": "light",
+      "state": "ON",
+      "isOnline": true,
+      "powerWatts": 12,
+      "lastUpdated": "2026-10-09T07:09:49.207Z",
+      "pin": "D2",
+      "mqttTopic": "home/study/light1",
+      "isHardwareAcknowledged": false
+    },
+    {
+      "id": "plug_st_pc",
+      "name": "Workstation Surge Protector",
+      "room": "study",
+      "type": "plug",
+      "state": "ON",
+      "isOnline": true,
+      "powerWatts": 185,
+      "lastUpdated": "2026-10-09T07:09:49.207Z",
+      "pin": "D14",
+      "mqttTopic": "home/study/plug1",
+      "isHardwareAcknowledged": false
+    }
+  ],
+  "sensors": [
+    {
+      "id": "temp_living_room",
+      "name": "DHT22 Ambient Temperature",
+      "room": "living-room",
+      "type": "temperature",
+      "value": 24.3,
+      "unit": "°C",
+      "min": 15,
+      "max": 40,
+      "isOnline": true,
+      "lastUpdated": "2026-10-09T07:23:58.687Z",
+      "hardwarePin": "GPIO4",
+      "mqttTopic": "home/living-room/temperature",
+      "history": [
+        {
+          "timestamp": "2026-10-09T06:51:49.207Z",
+          "value": 24.1
+        },
+        {
+          "timestamp": "2026-10-09T06:54:49.207Z",
+          "value": 24.6
+        },
+        {
+          "timestamp": "2026-10-09T06:57:49.207Z",
+          "value": 24.2
+        },
+        {
+          "timestamp": "2026-10-09T07:00:49.207Z",
+          "value": 24.2
+        },
+        {
+          "timestamp": "2026-10-09T07:03:49.207Z",
+          "value": 24.4
+        },
+        {
+          "timestamp": "2026-10-09T07:06:49.207Z",
+          "value": 24.5
+        },
+        {
+          "timestamp": "2026-10-09T07:09:49.207Z",
+          "value": 24.6
+        },
+        {
+          "timestamp": "2026-10-09T07:09:53.229Z",
+          "value": 24.2
+        },
+        {
+          "timestamp": "2026-10-09T07:09:56.739Z",
+          "value": 24
+        },
+        {
+          "timestamp": "2026-10-09T07:10:00.249Z",
+          "value": 24
+        },
+        {
+          "timestamp": "2026-10-09T07:10:03.757Z",
+          "value": 24.1
+        },
+        {
+          "timestamp": "2026-10-09T07:10:07.271Z",
+          "value": 23.9
+        },
+        {
+          "timestamp": "2026-10-09T07:10:10.785Z",
+          "value": 23.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:02.530Z",
+          "value": 23.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:06.042Z",
+          "value": 23.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:09.543Z",
+          "value": 24
+        },
+        {
+          "timestamp": "2026-10-09T07:23:13.057Z",
+          "value": 23.9
+        },
+        {
+          "timestamp": "2026-10-09T07:23:16.558Z",
+          "value": 24
+        },
+        {
+          "timestamp": "2026-10-09T07:23:20.072Z",
+          "value": 24
+        },
+        {
+          "timestamp": "2026-10-09T07:23:23.585Z",
+          "value": 24
+        },
+        {
+          "timestamp": "2026-10-09T07:23:27.098Z",
+          "value": 23.9
+        },
+        {
+          "timestamp": "2026-10-09T07:23:30.605Z",
+          "value": 23.9
+        },
+        {
+          "timestamp": "2026-10-09T07:23:34.119Z",
+          "value": 24.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:37.625Z",
+          "value": 24.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:41.140Z",
+          "value": 24.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:44.653Z",
+          "value": 24.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:48.167Z",
+          "value": 24.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:51.668Z",
+          "value": 24.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:55.177Z",
+          "value": 24.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:58.687Z",
+          "value": 24.3
+        }
+      ]
+    },
+    {
+      "id": "humidity_living_room",
+      "name": "DHT22 Relative Humidity",
+      "room": "living-room",
+      "type": "humidity",
+      "value": 51.7,
+      "unit": "%",
+      "min": 20,
+      "max": 90,
+      "isOnline": true,
+      "lastUpdated": "2026-10-09T07:23:58.725Z",
+      "hardwarePin": "GPIO4",
+      "mqttTopic": "home/living-room/humidity",
+      "history": [
+        {
+          "timestamp": "2026-10-09T06:51:49.207Z",
+          "value": 52.1
+        },
+        {
+          "timestamp": "2026-10-09T06:54:49.207Z",
+          "value": 51.8
+        },
+        {
+          "timestamp": "2026-10-09T06:57:49.207Z",
+          "value": 53.6
+        },
+        {
+          "timestamp": "2026-10-09T07:00:49.207Z",
+          "value": 52.6
+        },
+        {
+          "timestamp": "2026-10-09T07:03:49.207Z",
+          "value": 53.5
+        },
+        {
+          "timestamp": "2026-10-09T07:06:49.207Z",
+          "value": 52.5
+        },
+        {
+          "timestamp": "2026-10-09T07:09:49.207Z",
+          "value": 52.1
+        },
+        {
+          "timestamp": "2026-10-09T07:09:53.263Z",
+          "value": 52.5
+        },
+        {
+          "timestamp": "2026-10-09T07:09:56.766Z",
+          "value": 52.6
+        },
+        {
+          "timestamp": "2026-10-09T07:10:00.277Z",
+          "value": 52.3
+        },
+        {
+          "timestamp": "2026-10-09T07:10:03.787Z",
+          "value": 52.7
+        },
+        {
+          "timestamp": "2026-10-09T07:10:07.289Z",
+          "value": 52.6
+        },
+        {
+          "timestamp": "2026-10-09T07:10:10.812Z",
+          "value": 52.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:02.566Z",
+          "value": 52.4
+        },
+        {
+          "timestamp": "2026-10-09T07:23:06.074Z",
+          "value": 52.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:09.580Z",
+          "value": 52.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:13.091Z",
+          "value": 52.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:16.583Z",
+          "value": 52.4
+        },
+        {
+          "timestamp": "2026-10-09T07:23:20.109Z",
+          "value": 52.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:23.620Z",
+          "value": 52.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:27.132Z",
+          "value": 52.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:30.637Z",
+          "value": 52.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:34.156Z",
+          "value": 51.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:37.658Z",
+          "value": 51.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:41.182Z",
+          "value": 51.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:44.691Z",
+          "value": 51.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:48.206Z",
+          "value": 52
+        },
+        {
+          "timestamp": "2026-10-09T07:23:51.708Z",
+          "value": 52.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:55.214Z",
+          "value": 51.9
+        },
+        {
+          "timestamp": "2026-10-09T07:23:58.725Z",
+          "value": 51.7
+        }
+      ]
+    },
+    {
+      "id": "motion_living_room",
+      "name": "HC-SR501 PIR Motion Sensor",
+      "room": "living-room",
+      "type": "motion",
+      "value": 0,
+      "unit": "",
+      "isOnline": true,
+      "lastUpdated": "2026-10-09T07:23:55.349Z",
+      "hardwarePin": "GPIO13",
+      "mqttTopic": "home/living-room/motion",
+      "history": [
+        {
+          "timestamp": "2026-10-09T07:09:56.893Z",
+          "value": 0
+        },
+        {
+          "timestamp": "2026-10-09T07:23:06.178Z",
+          "value": 0
+        },
+        {
+          "timestamp": "2026-10-09T07:23:27.253Z",
+          "value": 1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:34.295Z",
+          "value": 0
+        },
+        {
+          "timestamp": "2026-10-09T07:23:55.349Z",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "light_living_room",
+      "name": "LDR Ambient Illuminance",
+      "room": "living-room",
+      "type": "light",
+      "value": 353.8,
+      "unit": "lux",
+      "min": 0,
+      "max": 1000,
+      "isOnline": true,
+      "lastUpdated": "2026-10-09T07:23:58.796Z",
+      "hardwarePin": "ADC0/VP",
+      "mqttTopic": "home/living-room/light",
+      "history": [
+        {
+          "timestamp": "2026-10-09T06:51:49.207Z",
+          "value": 386.7
+        },
+        {
+          "timestamp": "2026-10-09T06:54:49.207Z",
+          "value": 404.3
+        },
+        {
+          "timestamp": "2026-10-09T06:57:49.207Z",
+          "value": 370.4
+        },
+        {
+          "timestamp": "2026-10-09T07:00:49.207Z",
+          "value": 380
+        },
+        {
+          "timestamp": "2026-10-09T07:03:49.207Z",
+          "value": 401.8
+        },
+        {
+          "timestamp": "2026-10-09T07:06:49.207Z",
+          "value": 381.7
+        },
+        {
+          "timestamp": "2026-10-09T07:09:49.207Z",
+          "value": 387.1
+        },
+        {
+          "timestamp": "2026-10-09T07:09:53.334Z",
+          "value": 388.6
+        },
+        {
+          "timestamp": "2026-10-09T07:09:56.850Z",
+          "value": 383.2
+        },
+        {
+          "timestamp": "2026-10-09T07:10:00.344Z",
+          "value": 371.6
+        },
+        {
+          "timestamp": "2026-10-09T07:10:03.858Z",
+          "value": 369.2
+        },
+        {
+          "timestamp": "2026-10-09T07:10:07.344Z",
+          "value": 359.1
+        },
+        {
+          "timestamp": "2026-10-09T07:10:10.875Z",
+          "value": 355.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:02.644Z",
+          "value": 358.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:06.143Z",
+          "value": 367.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:09.659Z",
+          "value": 370.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:13.160Z",
+          "value": 363.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:16.657Z",
+          "value": 358.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:20.178Z",
+          "value": 368.9
+        },
+        {
+          "timestamp": "2026-10-09T07:23:23.701Z",
+          "value": 369.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:27.210Z",
+          "value": 365.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:30.727Z",
+          "value": 367.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:34.238Z",
+          "value": 362.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:37.742Z",
+          "value": 366.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:41.273Z",
+          "value": 363.4
+        },
+        {
+          "timestamp": "2026-10-09T07:23:44.772Z",
+          "value": 352.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:48.299Z",
+          "value": 350.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:51.803Z",
+          "value": 363.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:55.295Z",
+          "value": 359.9
+        },
+        {
+          "timestamp": "2026-10-09T07:23:58.796Z",
+          "value": 353.8
+        }
+      ]
+    },
+    {
+      "id": "temp_bedroom",
+      "name": "DHT11 Bedroom Temperature",
+      "room": "bedroom",
+      "type": "temperature",
+      "value": 22.7,
+      "unit": "°C",
+      "min": 15,
+      "max": 40,
+      "isOnline": true,
+      "lastUpdated": "2026-10-09T07:23:58.749Z",
+      "hardwarePin": "GPIO16",
+      "mqttTopic": "home/bedroom/temperature",
+      "history": [
+        {
+          "timestamp": "2026-10-09T06:51:49.207Z",
+          "value": 23
+        },
+        {
+          "timestamp": "2026-10-09T06:54:49.207Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T06:57:49.207Z",
+          "value": 23.2
+        },
+        {
+          "timestamp": "2026-10-09T07:00:49.207Z",
+          "value": 22.9
+        },
+        {
+          "timestamp": "2026-10-09T07:03:49.207Z",
+          "value": 23.1
+        },
+        {
+          "timestamp": "2026-10-09T07:06:49.207Z",
+          "value": 23
+        },
+        {
+          "timestamp": "2026-10-09T07:09:49.207Z",
+          "value": 23
+        },
+        {
+          "timestamp": "2026-10-09T07:09:53.291Z",
+          "value": 22.7
+        },
+        {
+          "timestamp": "2026-10-09T07:09:56.794Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:10:00.297Z",
+          "value": 22.7
+        },
+        {
+          "timestamp": "2026-10-09T07:10:03.811Z",
+          "value": 22.8
+        },
+        {
+          "timestamp": "2026-10-09T07:10:07.309Z",
+          "value": 22.8
+        },
+        {
+          "timestamp": "2026-10-09T07:10:10.837Z",
+          "value": 22.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:02.592Z",
+          "value": 22.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:06.097Z",
+          "value": 22.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:09.608Z",
+          "value": 22.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:13.118Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:16.604Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:20.134Z",
+          "value": 22.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:23.654Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:27.160Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:30.673Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:34.186Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:37.683Z",
+          "value": 22.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:41.213Z",
+          "value": 22.4
+        },
+        {
+          "timestamp": "2026-10-09T07:23:44.718Z",
+          "value": 22.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:48.236Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:51.739Z",
+          "value": 22.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:55.241Z",
+          "value": 22.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:58.749Z",
+          "value": 22.7
+        }
+      ]
+    },
+    {
+      "id": "humidity_bedroom",
+      "name": "DHT11 Bedroom Humidity",
+      "room": "bedroom",
+      "type": "humidity",
+      "value": 49,
+      "unit": "%",
+      "min": 20,
+      "max": 90,
+      "isOnline": true,
+      "lastUpdated": "2026-10-09T07:23:58.774Z",
+      "hardwarePin": "GPIO16",
+      "mqttTopic": "home/bedroom/humidity",
+      "history": [
+        {
+          "timestamp": "2026-10-09T06:51:49.207Z",
+          "value": 47.2
+        },
+        {
+          "timestamp": "2026-10-09T06:54:49.207Z",
+          "value": 47.9
+        },
+        {
+          "timestamp": "2026-10-09T06:57:49.207Z",
+          "value": 48
+        },
+        {
+          "timestamp": "2026-10-09T07:00:49.207Z",
+          "value": 47.5
+        },
+        {
+          "timestamp": "2026-10-09T07:03:49.207Z",
+          "value": 47.2
+        },
+        {
+          "timestamp": "2026-10-09T07:06:49.207Z",
+          "value": 48.3
+        },
+        {
+          "timestamp": "2026-10-09T07:09:49.207Z",
+          "value": 48.5
+        },
+        {
+          "timestamp": "2026-10-09T07:09:53.312Z",
+          "value": 48.2
+        },
+        {
+          "timestamp": "2026-10-09T07:09:56.825Z",
+          "value": 48.4
+        },
+        {
+          "timestamp": "2026-10-09T07:10:00.322Z",
+          "value": 48.2
+        },
+        {
+          "timestamp": "2026-10-09T07:10:03.834Z",
+          "value": 48.4
+        },
+        {
+          "timestamp": "2026-10-09T07:10:07.328Z",
+          "value": 48.5
+        },
+        {
+          "timestamp": "2026-10-09T07:10:10.859Z",
+          "value": 48.4
+        },
+        {
+          "timestamp": "2026-10-09T07:23:02.619Z",
+          "value": 48.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:06.122Z",
+          "value": 48.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:09.630Z",
+          "value": 48.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:13.141Z",
+          "value": 48.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:16.630Z",
+          "value": 48.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:20.155Z",
+          "value": 48.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:23.677Z",
+          "value": 48.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:27.184Z",
+          "value": 48.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:30.699Z",
+          "value": 48.2
+        },
+        {
+          "timestamp": "2026-10-09T07:23:34.214Z",
+          "value": 48.4
+        },
+        {
+          "timestamp": "2026-10-09T07:23:37.713Z",
+          "value": 48.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:41.244Z",
+          "value": 48.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:44.751Z",
+          "value": 48.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:48.264Z",
+          "value": 48.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:51.776Z",
+          "value": 49.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:55.268Z",
+          "value": 49.4
+        },
+        {
+          "timestamp": "2026-10-09T07:23:58.774Z",
+          "value": 49
+        }
+      ]
+    },
+    {
+      "id": "gas_kitchen",
+      "name": "MQ-2 LPG & Gas Detector",
+      "room": "kitchen",
+      "type": "gas",
+      "value": 22.6,
+      "unit": "ppm",
+      "min": 0,
+      "max": 500,
+      "alertThreshold": 120,
+      "isOnline": true,
+      "lastUpdated": "2026-10-09T07:23:58.824Z",
+      "hardwarePin": "ADC1/VN",
+      "mqttTopic": "home/kitchen/gas",
+      "history": [
+        {
+          "timestamp": "2026-10-09T06:51:49.207Z",
+          "value": 26.8
+        },
+        {
+          "timestamp": "2026-10-09T06:54:49.207Z",
+          "value": 24.2
+        },
+        {
+          "timestamp": "2026-10-09T06:57:49.207Z",
+          "value": 27.1
+        },
+        {
+          "timestamp": "2026-10-09T07:00:49.207Z",
+          "value": 27.5
+        },
+        {
+          "timestamp": "2026-10-09T07:03:49.207Z",
+          "value": 25.9
+        },
+        {
+          "timestamp": "2026-10-09T07:06:49.207Z",
+          "value": 26.7
+        },
+        {
+          "timestamp": "2026-10-09T07:09:49.207Z",
+          "value": 28
+        },
+        {
+          "timestamp": "2026-10-09T07:09:53.351Z",
+          "value": 27.3
+        },
+        {
+          "timestamp": "2026-10-09T07:09:56.875Z",
+          "value": 25.9
+        },
+        {
+          "timestamp": "2026-10-09T07:10:00.364Z",
+          "value": 25.5
+        },
+        {
+          "timestamp": "2026-10-09T07:10:03.880Z",
+          "value": 26.9
+        },
+        {
+          "timestamp": "2026-10-09T07:10:07.361Z",
+          "value": 28.2
+        },
+        {
+          "timestamp": "2026-10-09T07:10:10.898Z",
+          "value": 27.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:02.660Z",
+          "value": 25.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:06.157Z",
+          "value": 26.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:09.684Z",
+          "value": 26.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:13.188Z",
+          "value": 26
+        },
+        {
+          "timestamp": "2026-10-09T07:23:16.687Z",
+          "value": 24.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:20.208Z",
+          "value": 25.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:23.725Z",
+          "value": 26.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:27.237Z",
+          "value": 24.9
+        },
+        {
+          "timestamp": "2026-10-09T07:23:30.755Z",
+          "value": 23.6
+        },
+        {
+          "timestamp": "2026-10-09T07:23:34.265Z",
+          "value": 22.8
+        },
+        {
+          "timestamp": "2026-10-09T07:23:37.767Z",
+          "value": 24.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:41.313Z",
+          "value": 23.5
+        },
+        {
+          "timestamp": "2026-10-09T07:23:44.796Z",
+          "value": 23.7
+        },
+        {
+          "timestamp": "2026-10-09T07:23:48.330Z",
+          "value": 23
+        },
+        {
+          "timestamp": "2026-10-09T07:23:51.835Z",
+          "value": 22.3
+        },
+        {
+          "timestamp": "2026-10-09T07:23:55.324Z",
+          "value": 23.1
+        },
+        {
+          "timestamp": "2026-10-09T07:23:58.824Z",
+          "value": 22.6
+        }
+      ]
+    }
+  ],
+  "automationRules": [
+    {
+      "id": "rule_1",
+      "name": "Motion-Activated Welcome Light",
+      "description": "Switch on Living Room Chandelier whenever PIR motion is detected.",
+      "triggerSensorId": "motion_living_room",
+      "condition": "equals",
+      "threshold": 1,
+      "targetDeviceId": "light_lr_main",
+      "targetState": "ON",
+      "isEnabled": true,
+      "mode": "demo_only",
+      "lastTriggered": "2026-10-09T07:23:27.300Z"
+    },
+    {
+      "id": "rule_2",
+      "name": "Automated Fan On Warm Climate",
+      "description": "Automatically engage ceiling fan if living room temp exceeds 27.5 °C.",
+      "triggerSensorId": "temp_living_room",
+      "condition": "greater_than",
+      "threshold": 27.5,
+      "targetDeviceId": "fan_lr_ceiling",
+      "targetState": "ON",
+      "isEnabled": true,
+      "mode": "demo_only",
+      "lastTriggered": null
+    },
+    {
+      "id": "rule_3",
+      "name": "Night Dusk Accent Illuminator",
+      "description": "Turn on Living Room Accent Lamp when light falls below 150 lux.",
+      "triggerSensorId": "light_living_room",
+      "condition": "less_than",
+      "threshold": 150,
+      "targetDeviceId": "light_lr_ambient",
+      "targetState": "ON",
+      "isEnabled": false,
+      "mode": "saved_inactive",
+      "lastTriggered": null
+    },
+    {
+      "id": "rule_4",
+      "name": "Kitchen Hazard Emergency Cutoff",
+      "description": "Emergency shutdown of kitchen smart plug if gas exceeds 120 ppm.",
+      "triggerSensorId": "gas_kitchen",
+      "condition": "greater_than",
+      "threshold": 120,
+      "targetDeviceId": "plug_kt_kettle",
+      "targetState": "OFF",
+      "isEnabled": true,
+      "mode": "demo_only",
+      "lastTriggered": null
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "log_1791530634029_7czm",
+      "timestamp": "2026-10-09T07:23:54.029Z",
+      "type": "DEVICE_COMMAND",
+      "deviceName": "Smart Ceiling Fan",
+      "room": "living-room",
+      "message": "User toggled switch to OFF (Simulated)",
+      "status": "success",
+      "isSimulated": true
+    },
+    {
+      "id": "log_1791530633848_72v5",
+      "timestamp": "2026-10-09T07:23:53.848Z",
+      "type": "DEVICE_COMMAND",
+      "deviceName": "Cove Accent Lighting",
+      "room": "living-room",
+      "message": "User toggled switch to OFF (Simulated)",
+      "status": "success",
+      "isSimulated": true
+    },
+    {
+      "id": "log_1791530633670_o5bd",
+      "timestamp": "2026-10-09T07:23:53.670Z",
+      "type": "DEVICE_COMMAND",
+      "deviceName": "Main Ceiling Chandelier",
+      "room": "living-room",
+      "message": "User toggled switch to OFF (Simulated)",
+      "status": "success",
+      "isSimulated": true
+    },
+    {
+      "id": "log_1791530633492_f1e9",
+      "timestamp": "2026-10-09T07:23:53.492Z",
+      "type": "DEVICE_COMMAND",
+      "deviceName": "Main Ceiling Chandelier",
+      "room": "living-room",
+      "message": "User toggled switch to ON (Simulated)",
+      "status": "success",
+      "isSimulated": true
+    },
+    {
+      "id": "log_1791530607534_t1rv",
+      "timestamp": "2026-10-09T07:23:27.534Z",
+      "type": "AUTOMATION_TRIGGER",
+      "deviceName": "Main Ceiling Chandelier",
+      "room": "living-room",
+      "message": "Triggered by \"Motion-Activated Welcome Light\": HC-SR501 PIR Motion Sensor read 1 . Set to ON.",
+      "status": "info",
+      "isSimulated": true
+    },
+    {
+      "id": "log_1791530607497_l90i",
+      "timestamp": "2026-10-09T07:23:27.497Z",
+      "type": "DEVICE_COMMAND",
+      "deviceName": "Main Ceiling Chandelier",
+      "room": "living-room",
+      "message": "[Demo Rule: Motion-Activated Welcome Light] Set state to ON",
+      "status": "success",
+      "isSimulated": true
+    },
+    {
+      "id": "log_1791530607274_gb43",
+      "timestamp": "2026-10-09T07:23:27.274Z",
+      "type": "SENSOR_UPDATE",
+      "deviceName": "HC-SR501 PIR Sensor",
+      "room": "Living Room",
+      "message": "Simulated motion activity detected in living room zone.",
+      "status": "info",
+      "isSimulated": true
+    },
+    {
+      "id": "log_boot_1",
+      "timestamp": "2026-10-09T06:09:49.207Z",
+      "type": "CONNECTION",
+      "deviceName": "System Gateway",
+      "room": "Central",
+      "message": "IoT Smart Home Gateway initialized successfully.",
+      "status": "success",
+      "isSimulated": true
+    },
+    {
+      "id": "log_boot_2",
+      "timestamp": "2026-10-09T06:11:29.207Z",
+      "type": "MODE_CHANGE",
+      "deviceName": "Environment",
+      "room": "System",
+      "message": "Operating in DEMO MODE with realistic simulated sensor streams.",
+      "status": "info",
+      "isSimulated": true
+    },
+    {
+      "id": "log_boot_3",
+      "timestamp": "2026-10-09T06:29:49.207Z",
+      "type": "DEVICE_COMMAND",
+      "deviceName": "Cove Accent Lighting",
+      "room": "Living Room",
+      "message": "Appliance state set to ON.",
+      "status": "success",
+      "isSimulated": true
+    },
+    {
+      "id": "log_boot_4",
+      "timestamp": "2026-10-09T06:49:49.207Z",
+      "type": "AUTOMATION_TRIGGER",
+      "deviceName": "Smart Ceiling Fan",
+      "room": "Living Room",
+      "message": "Triggered by rule \"Automated Fan On Warm Climate\".",
+      "status": "info",
+      "isSimulated": true
+    }
+  ]
+}

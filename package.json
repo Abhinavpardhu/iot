@@ -1,0 +1,28 @@
+{
+  "name": "iot-smart-home-automation",
+  "version": "1.0.0",
+  "description": "IoT-Based Smart Home Automation System with React Dashboard and ESP32/ESP8266 IoT Gateway",
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"cyan.bold,blue.bold\" \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "start": "node backend/server.js",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend"
+  },
+  "keywords": [
+    "iot",
+    "smart-home",
+    "esp32",
+    "esp8266",
+    "mqtt",
+    "react",
+    "dashboard",
+    "automation"
+  ],
+  "author": "Engineering Project Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
